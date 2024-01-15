@@ -37,7 +37,7 @@ Users should be able to:
 
 ### What I learned
 
-In this project, I have enhanced my understanding of structuring web pages using CSS Grid. I thoroughly enjoyed tackling this challenge as it presented a slightly higher level of difficulty compared to my previous endeavors. 
+In this project, I have enhanced my understanding of structuring web pages using CSS Grid. I thoroughly enjoyed tackling this challenge as it presented a slightly higher level of difficulty compared to my previous endeavors and also notice that i wrote less line of javascript in this project on the order once i do, qudos to me. 
 
 ```html
 <aside>
