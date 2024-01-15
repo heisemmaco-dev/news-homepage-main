@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./dist/css/style.css">
+  
+  <title>Frontend Mentor | News homepage</title>
+
+</head>
+<body>
+
+  <header>
+    <img src="./assets/images/logo.svg" alt="page logo" class="logo">
+
+    <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Categories</a></li>
+    </ul>
+    </nav>
+    
+
+    <button aria-label="menu" class="toggler">
+      <img src="./assets/images/icon-menu.svg" alt="icon menu">
+      <img src="./assets/images/icon-menu-close.svg" alt="icon menu close">
+    </button >
+  </header>
+
+  <main>
+    <picture>
+       <source media="(min-width: 600px)" srcset="./assets/images/image-web-3-desktop.jpg">
+       <img src="./assets/images/image-web-3-mobile.jpg" alt="image web 3 mobile">
+    </picture>
+
+    <section class="article">
+
+     <h1> The Bright Future of Web 3.0? </h1> 
+
+     <div>
+      <p>
+      We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+      But is it really fulfilling its promise?
+     </p>
+      
+    <button>Read more</button>
+     </div>
+
+    </section>
+
+    <aside>
+      <h2> New </h2>  
+     
+      <div>
+      <strong>
+       Hydrogen VS Electric Cars
+      </strong>
+     
+      <p>
+       Will hydrogen-fueled cars ever catch up to EVs?
+      </p>
+      </div>
+     
+      <div>
+       <strong>
+         The Downsides of AI Artistry
+       </strong>
+      
+       <p>
+         What are the possible adverse effects of on-demand AI image generation?
+       </p>
+       </div>
+     
+     
+       <div>
+         <strong>
+           Is VC Funding Drying Up?
+         </strong>
+        
+         <p> 
+           Private funding by VC firms is down 50% YOY. We take a look at what that means. 
+         </p>
+       </div>
+     
+     </aside>
+
+     <section class="footer">
+      <article>
+        <img src="./assets/images/image-retro-pcs.jpg" alt="top laptops image">
+
+        <div>
+          <span>01</span>
+          <strong>Reviving Retro PCs</strong>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+
+      </article>
+
+      <article>
+        <img src="./assets/images/image-top-laptops.jpg" alt="top laptops image">
+
+        <div>
+          <span>02</span>
+          <strong>Top 10 Laptops of 2022</strong>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+
+      </article>
+
+      <article>
+        <img src="./assets/images/image-gaming-growth.jpg" alt="gaming growth image">
+
+        <div>
+          <span>03</span>
+          <strong>The Growth of Gaming</strong>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+
+      </article>
+     </section>
+     
+  </main>
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.twitter.com/heisemmaco">Am Emmanuel</a>.
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+@function rem($data) {
+    @if math.is-unitless($data) {
+        @return math.div($data, 16) + rem;
+    }
+    @else {
+        @error "Don't use units when using the rem() function, only";
+    }
+};
+
+@function em($data) {
+    @if math.is-unitless($data) {
+        @return math.div($data, 16) + em;
+    }
+    @else {
+        @error "Don't use units when using the rem() function, only"
+    }
+}

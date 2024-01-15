@@ -1,0 +1,312 @@
+@forward 'reset';
+@use 'function' as *;
+@use 'variable' as *;
+@use 'mexin' as *;
+
+header {
+    width: min(100% - rem(25), rem(1200));
+    padding-block: rem(30);
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(10);
+
+    nav {
+        display: none;
+        position: absolute;
+        right: -20px;
+        top: 0;
+        background-color: $Off-white;
+        padding: rem(10) rem(25) rem(10) rem(10);
+        height: 100vh;
+
+        width: 70%;
+
+        box-shadow: -200px 2px 0 20px hsla(0, 0%, 0%, 0.40);
+
+        @include media(em($width)){
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            height: auto;
+            position: relative;
+            right: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: rem(20);
+            margin-top: 120px;
+            margin-left: 15px;
+
+            @include media(em($width)){
+                margin: 0;
+                flex-direction: row;
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: $Dark-grayish-blue;
+
+            &:is(:hover, :focus) {
+                color: $Soft-orange;
+            }
+        }
+    }
+
+    .toggler {
+        z-index: 2;
+        border: none;
+        outline: none;
+        border-radius: rem(3);
+
+        padding: rem(7);
+
+        &:focus {
+            outline: 1px solid $Dark-grayish-blue;
+        }
+
+        background-color: transparent;
+        img {
+            cursor: pointer;
+        }
+
+        img:last-child {
+            display: none;
+        }
+
+        @include media(em($width)){
+            display: none;
+        }
+    }
+
+    &.showHiddenItem .toggler {
+        img:first-child {
+            display: none;
+        }
+
+        img:last-child {
+            display: initial;
+        }
+    }
+
+    &.showHiddenItem nav {
+        display: flex;
+    }
+}
+
+main {
+    width: min(100% - rem(30), rem(1200));
+    display: grid;
+    gap: rem(20);
+   // grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    ;
+
+    @include media(rem($grid-width)) {
+     grid-template-areas: 
+        'one one three'
+        'two two three'
+        'four four four'
+    ; 
+
+    gap: rem(36);
+    }
+
+    picture {
+        grid-area: one;
+    }
+
+    .article {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+        grid-area: two;
+
+        @include media(em($width)) {
+            flex-direction: row;
+            gap: rem(23);
+        }
+
+        h1 {
+            font-size: rem(45);
+            line-height: 1;
+            flex: 1;
+            font-weight: bolder;
+
+            @include media(em($grid-width)) {
+                font-size: rem(58);
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: rem(20); 
+            color: $Dark-grayish-blue;
+            flex: 1;
+
+            button {
+                background-color: $Soft-red;
+                color: $Off-white;
+                max-width: 55%;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: rem(14);
+
+                border: none;
+                outline: none;
+                cursor: pointer;
+
+                &:is(:hover, :focus) {
+                    background-color: $Very-dark-blue;
+                }
+            }
+        }
+    }
+}
+
+main aside{
+    background-color: $Very-dark-blue;
+    color: $Off-white;
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+    padding: rem(22);
+    margin-top: rem(40);
+    grid-area: three;
+
+    @include media(rem($grid-width)) {
+        margin: 0;
+    }
+
+    h2 {
+        font-size: rem(32);
+        color: $Soft-orange;
+
+        @include media(em($width)) {
+            font-size: rem(42);
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+
+        strong {
+            font-size: rem(20);
+            cursor: pointer;
+
+            @include media(em($width)) {
+                font-size: rem(30);
+            }
+
+            @include media(em($grid-width)) {
+                font-size: rem(26);
+            }
+
+            &:hover {
+              color: $Soft-orange;
+            }
+        }
+
+        p {
+            color: $Grayish-blue;
+            @include media(em($width)) {
+                font-size: rem(18);
+            }
+        }
+
+        &:not(:last-child){
+            border-bottom: 1px solid $Grayish-blue;
+            padding-bottom: rem(25);
+        }
+   
+    }   
+}
+
+main .footer{
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+    margin-top: rem(40);
+    grid-area: four;
+
+    @include media(rem($grid-width)) {
+        flex-direction: row;
+    }
+
+    article {
+    display: flex;
+    gap: rem(15);
+    align-items: center;
+    //width: 100%;
+    flex: 1;
+
+    img {
+        max-width: rem(100);
+        width: 100%;
+        height: 100%;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: rem(4);
+        line-height: 1;
+        height: 100%;
+
+        span {
+            font-size: rem(30);
+            color: $Grayish-blue;
+            font-weight: 600;
+
+
+        @include media(em($width)) {
+          font-size: rem(50);
+        }
+        }
+
+        strong {
+            color: $Very-dark-blue;
+            cursor: pointer;
+
+            &:hover {
+              color:  $Soft-red;
+            }
+
+            @include media(em($width)) {
+                font-size: rem(30);
+              }
+
+              @include media(em($grid-width)) {
+                font-size: rem(22);
+              }
+        }
+
+        p {
+            color: $Dark-grayish-blue;
+            @include media(em($width)) {
+                font-size: rem(18);
+              }
+        }
+    }
+    }
+}

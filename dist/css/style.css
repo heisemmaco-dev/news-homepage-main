@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+  font-size: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+button {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2 {
+  overflow-wrap: break-word;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+header {
+  width: min(100% - 1.5625rem, 75rem);
+  padding-block: 1.875rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.625rem;
+}
+header nav {
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  background-color: hsl(36, 100%, 99%);
+  padding: 0.625rem 1.5625rem 0.625rem 0.625rem;
+  height: 100vh;
+  width: 70%;
+  box-shadow: -200px 2px 0 20px hsla(0, 0%, 0%, 0.4);
+}
+@media screen and (min-width: 44.375em) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    position: relative;
+    right: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 120px;
+  margin-left: 15px;
+}
+@media screen and (min-width: 44.375em) {
+  header nav ul {
+    margin: 0;
+    flex-direction: row;
+  }
+}
+header nav li {
+  list-style: none;
+}
+header nav a {
+  text-decoration: none;
+  color: hsl(236, 13%, 42%);
+}
+header nav a:is(:hover, :focus) {
+  color: hsl(35, 77%, 62%);
+}
+header .toggler {
+  z-index: 2;
+  border: none;
+  outline: none;
+  border-radius: 0.1875rem;
+  padding: 0.4375rem;
+  background-color: transparent;
+}
+header .toggler:focus {
+  outline: 1px solid hsl(236, 13%, 42%);
+}
+header .toggler img {
+  cursor: pointer;
+}
+header .toggler img:last-child {
+  display: none;
+}
+@media screen and (min-width: 44.375em) {
+  header .toggler {
+    display: none;
+  }
+}
+header.showHiddenItem .toggler img:first-child {
+  display: none;
+}
+header.showHiddenItem .toggler img:last-child {
+  display: initial;
+}
+header.showHiddenItem nav {
+  display: flex;
+}
+
+main {
+  width: min(100% - 1.875rem, 75rem);
+  display: grid;
+  gap: 1.25rem;
+  grid-template-areas: "one" "two" "three" "four";
+}
+@media screen and (min-width: 62.5rem) {
+  main {
+    grid-template-areas: "one one three" "two two three" "four four four";
+    gap: 2.25rem;
+  }
+}
+main picture {
+  grid-area: one;
+}
+main .article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  grid-area: two;
+}
+@media screen and (min-width: 44.375em) {
+  main .article {
+    flex-direction: row;
+    gap: 1.4375rem;
+  }
+}
+main .article h1 {
+  font-size: 2.8125rem;
+  line-height: 1;
+  flex: 1;
+  font-weight: bolder;
+}
+@media screen and (min-width: 62.5em) {
+  main .article h1 {
+    font-size: 3.625rem;
+  }
+}
+main .article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  color: hsl(236, 13%, 42%);
+  flex: 1;
+}
+main .article div button {
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  max-width: 55%;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.875rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+main .article div button:is(:hover, :focus) {
+  background-color: hsl(240, 100%, 5%);
+}
+
+main aside {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  padding: 1.375rem;
+  margin-top: 2.5rem;
+  grid-area: three;
+}
+@media screen and (min-width: 62.5rem) {
+  main aside {
+    margin: 0;
+  }
+}
+main aside h2 {
+  font-size: 2rem;
+  color: hsl(35, 77%, 62%);
+}
+@media screen and (min-width: 44.375em) {
+  main aside h2 {
+    font-size: 2.625rem;
+  }
+}
+main aside div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main aside div strong {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 44.375em) {
+  main aside div strong {
+    font-size: 1.875rem;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  main aside div strong {
+    font-size: 1.625rem;
+  }
+}
+main aside div strong:hover {
+  color: hsl(35, 77%, 62%);
+}
+main aside div p {
+  color: hsl(233, 8%, 79%);
+}
+@media screen and (min-width: 44.375em) {
+  main aside div p {
+    font-size: 1.125rem;
+  }
+}
+main aside div:not(:last-child) {
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+  padding-bottom: 1.5625rem;
+}
+
+main .footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  margin-top: 2.5rem;
+  grid-area: four;
+}
+@media screen and (min-width: 62.5rem) {
+  main .footer {
+    flex-direction: row;
+  }
+}
+main .footer article {
+  display: flex;
+  gap: 0.9375rem;
+  align-items: center;
+  flex: 1;
+}
+main .footer article img {
+  max-width: 6.25rem;
+  width: 100%;
+  height: 100%;
+}
+main .footer article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.25rem;
+  line-height: 1;
+  height: 100%;
+}
+main .footer article div span {
+  font-size: 1.875rem;
+  color: hsl(233, 8%, 79%);
+  font-weight: 600;
+}
+@media screen and (min-width: 44.375em) {
+  main .footer article div span {
+    font-size: 3.125rem;
+  }
+}
+main .footer article div strong {
+  color: hsl(240, 100%, 5%);
+  cursor: pointer;
+}
+main .footer article div strong:hover {
+  color: hsl(5, 85%, 63%);
+}
+@media screen and (min-width: 44.375em) {
+  main .footer article div strong {
+    font-size: 1.875rem;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  main .footer article div strong {
+    font-size: 1.375rem;
+  }
+}
+main .footer article div p {
+  color: hsl(236, 13%, 42%);
+}
+@media screen and (min-width: 44.375em) {
+  main .footer article div p {
+    font-size: 1.125rem;
+  }
+}/*# sourceMappingURL=style.css.map */
