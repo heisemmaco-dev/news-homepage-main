@@ -144,17 +144,17 @@ header .toggler img:last-child {
     display: none;
   }
 }
-header.showHiddenItem .toggler img:first-child {
+header .toggler.changeBtnImage img:first-child {
   display: none;
 }
-header.showHiddenItem .toggler img:last-child {
+header .toggler.changeBtnImage img:last-child {
   display: initial;
 }
 header.showHiddenItem nav {
   display: flex;
 }
 header .slide-in {
-  animation: slideIn 0.15s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
 }
 @keyframes slideIn {
   from {

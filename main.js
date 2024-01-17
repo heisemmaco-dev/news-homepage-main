@@ -4,28 +4,43 @@ let header = document.querySelector('header')
 let menuButton = document.querySelector('.toggler')
 let nav = document.querySelector('nav')
 // add event listener to the button
-/* menuButton.addEventListener('click', () => {
-    header.classList.toggle('showHiddenItem')
-    nav.classList.toggle('slice-out')
-    nav.classList.toggle('slide-in')
-}) */
 
 menuButton.addEventListener('click', () => {
+    //menuButton.classList.toggle('changeBtnImage')
     if (!header.classList.contains('showHiddenItem')) {
-     /*  slideContainer.classList.remove('hidden');
-      slideContainer.classList.add('slide-in'); */
       header.classList.add('showHiddenItem')
+
+      menuButton.classList.add('changeBtnImage')
+
       nav.classList.remove('slide-out')
       nav.classList.add('slide-in')
     } else {
-        console.log('hi, you are welcome');
-        
-     
         nav.classList.remove('slide-in')
         nav.classList.add('slide-out')
 
+        menuButton.classList.remove('changeBtnImage')
+
       setTimeout(() => {
         header.classList.remove('showHiddenItem')
-      }, 1000); 
+      }, 600); 
     }
   });
+
+  // tha auchor tag, i want to disappear when the anyone being clicked
+
+  let aTag = document.querySelectorAll('nav a')
+
+  aTag.forEach(anchorTAg => {
+    anchorTAg.addEventListener('click', () => {
+
+       if (header.classList.contains('showHiddenItem')) {
+        nav.classList.remove('slide-in')
+        nav.classList.add('slide-out')
+        menuButton.classList.remove('changeBtnImage')
+
+      setTimeout(() => {
+        header.classList.remove('showHiddenItem')
+      }, 600);
+      }
+    })
+  })

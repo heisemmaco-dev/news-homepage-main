@@ -94,24 +94,25 @@ header {
         @include media(em($width)){
             display: none;
         }
+
+        &.changeBtnImage {
+            img:first-child {
+                display: none;
+            }
+    
+            img:last-child {
+                display: initial;
+            }
+        }
     }
 
-    &.showHiddenItem .toggler {
-        img:first-child {
-            display: none;
-        }
-
-        img:last-child {
-            display: initial;
-        }
-    }
 
     &.showHiddenItem nav {
         display: flex;
     }
 
     .slide-in {
-        animation: slideIn .15s ease-in-out;
+        animation: slideIn .5s ease-in-out;
       }
       
       @keyframes slideIn {
