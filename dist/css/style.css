@@ -75,13 +75,13 @@ header {
 header nav {
   display: none;
   position: absolute;
-  right: -20px;
+  right: 0;
   top: 0;
   background-color: hsl(36, 100%, 99%);
   padding: 0.625rem 1.5625rem 0.625rem 0.625rem;
   height: 100vh;
   width: 70%;
-  box-shadow: -200px 2px 0 20px hsla(0, 0%, 0%, 0.4);
+  box-shadow: -225px 2px 0 20px hsla(0, 0%, 0%, 0.4);
 }
 @media screen and (min-width: 44.375em) {
   header nav {
@@ -114,6 +114,7 @@ header nav li {
 header nav a {
   text-decoration: none;
   color: hsl(236, 13%, 42%);
+  transition: color 0.2s ease;
 }
 header nav a:is(:hover, :focus) {
   color: hsl(35, 77%, 62%);
@@ -123,7 +124,10 @@ header .toggler {
   border: none;
   outline: none;
   border-radius: 0.1875rem;
+  width: 51px;
+  height: 38px;
   padding: 0.4375rem;
+  transition: outline 0.2s ease;
   background-color: transparent;
 }
 header .toggler:focus {
@@ -148,6 +152,28 @@ header.showHiddenItem .toggler img:last-child {
 }
 header.showHiddenItem nav {
   display: flex;
+}
+header .slide-in {
+  animation: slideIn 0.15s ease-in-out;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+header .slide-out {
+  animation: slideOut 1s ease-in-out;
+}
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -20000px;
+  }
 }
 
 main {
@@ -203,6 +229,10 @@ main .article div button {
   text-transform: uppercase;
   font-weight: 600;
   padding: 0.875rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: background-color 0.2s ease;
   border: none;
   outline: none;
   cursor: pointer;
@@ -243,6 +273,7 @@ main aside div {
 main aside div strong {
   font-size: 1.25rem;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 @media screen and (min-width: 44.375em) {
   main aside div strong {
@@ -314,6 +345,7 @@ main .footer article div span {
 main .footer article div strong {
   color: hsl(240, 100%, 5%);
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 main .footer article div strong:hover {
   color: hsl(5, 85%, 63%);
